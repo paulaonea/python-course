@@ -87,10 +87,37 @@ def flowers(x, y):
         turtle.forward(5)
         turtle.seth(90)
 
+def stairs(x, y):
+    turtle.pensize(2)
+    for i in range(3):
+        turtle.fillcolor("white")
+        position(x - i * 5, y - i * 5)
+        rectangle(5, 68 + 2 * i * 5)
+
 
 turtle.speed("fastest")
 
-for x, y in [(-180, -300), (-180, -120), (-180, 60)]:
+
+position(-180, -300)
+turtle.seth(90)
+turtle.forward(8)
+turtle.right(90)
+turtle.forward(145)
+turtle.penup()
+turtle.setx(35)
+turtle.pendown()
+turtle.forward(144)
+turtle.right(90)
+turtle.forward(8)
+turtle.right(90)
+turtle.forward(135)
+turtle.penup()
+turtle.setx(-44)
+turtle.pendown()
+turtle.forward(135)
+
+
+for x, y in [ (-180, -120), (-180, 60)]:
     position(x, y)
     turtle.seth(90)
     rectangle(8, 360)
@@ -109,6 +136,7 @@ door(-29, -286)
 roof(-174, 68)
 flowers(-166,-292)
 flowers(52, -292)
+stairs(-34, -293)
 
 
 
