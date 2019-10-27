@@ -3,7 +3,16 @@
 import turtle
 
 
-def rectangle(length, width):
+def position(x, y):
+    turtle.penup()
+    turtle.setposition(x, y)
+    turtle.pendown()
+
+
+def rectangle(x, y, length, width, size, direction):
+    turtle.pensize(size)
+    turtle.seth(direction)
+    position(x, y)
     for i in range(2):
         turtle.forward(length)
         turtle.right(90)
@@ -11,52 +20,39 @@ def rectangle(length, width):
         turtle.right(90)
 
 
-def position(x, y):
-    turtle.penup()
-    turtle.setposition(x, y)
-    turtle.pendown()
+def line(x, y, length, size, direction):
+    turtle.pensize(size)
+    turtle.seth(direction)
+    position(x, y)
+    turtle.forward(length)
+
+
+def circle(x, y, radius, angle, size):
+    turtle.pensize(size)
+    position(x, y)
+    turtle.circle(radius, angle)
 
 
 def window(x, y):
-    position(x, y)
-    turtle.seth(90)
-    rectangle(6, 75)
-    position(x + 8, y + 6)
-    turtle.seth(90)
-    rectangle(60, 60)
-    position(x + 8, y + 36)
-    turtle.seth(0)
-    turtle.forward(60)
-    position(x + 38, y + 6)
-    turtle.seth(90)
-    turtle.forward(60)
-    position(x + 68, y + 66)
-    turtle.circle(30, 180)
+    rectangle(x, y, 6, 75, thick_pen, 90)
+    rectangle(x + 8, y + 6, 60, 60, thick_pen, 90)
+    line(x + 8, y + 36, 60, thin_pen, 0)
+    line(x + 38, y + 6, 60, thin_pen, 90)
+    circle(x + 68, y + 66, 30, 180, thick_pen)
 
 
 def door(x, y):
-    position(x, y)
-    turtle.seth(90)
-    rectangle(120, 60)
-    position(x + 6, y + 6)
-    turtle.seth(90)
-    rectangle(52, 48)
-    position(x + 6, y + 61)
-    turtle.seth(90)
-    rectangle(52, 48)
-    position(x + 60, y + 120)
-    turtle.circle(30, 180)
-    position(x + 28, y + 120)
-    turtle.seth(135)
-    turtle.forward(28)
-    position(x + 30, y + 120)
-    turtle.seth(90)
-    turtle.forward(30)
-    position(x + 32, y + 120)
-    turtle.seth(45)
-    turtle.forward(28)
+    rectangle(x, y, 120, 60, thick_pen, 90)
+    rectangle(x + 6, y + 5, 52, 48, thick_pen, 90)
+    rectangle(x + 6, y + 62, 52, 48, thick_pen, 90)
+    circle(x + 60, y + 120, 30, 180, thick_pen)
+    line(x + 28, y + 120, 28, thin_pen, 135)
+    line(x + 30, y + 120, 30, thin_pen, 90)
+    line(x + 32, y + 120, 28, thin_pen, 45)
+
 
 def roof(x, y):
+    turtle.pensize(thick_pen)
     position(x, y)
     turtle.seth(80)
     turtle.forward(85)
@@ -75,11 +71,10 @@ def roof(x, y):
         turtle.circle(21,152)
         turtle.seth(284)
 
+
 def flowers(x, y):
-    position(x,y)
-    turtle.seth(90)
-    rectangle(12, 115)
-    position(x+109, y+12)
+    rectangle(x, y, 12, 115, thick_pen, 90)
+    position(x + 109, y + 12)
     turtle.seth(90)
     for i in range(6):
         turtle.forward(5)
@@ -87,17 +82,18 @@ def flowers(x, y):
         turtle.forward(5)
         turtle.seth(90)
 
+
 def stairs(x, y):
-    turtle.pensize(2)
     for i in range(3):
-        turtle.fillcolor("white")
-        position(x - i * 5, y - i * 5)
-        rectangle(5, 68 + 2 * i * 5)
+        rectangle(x - i * 5, y - i * 5, 5, 68 + 2 * i * 5, thin_pen, 90)
 
 
 turtle.speed("fastest")
 
+thick_pen = 3
+thin_pen = 2
 
+turtle.pensize(thick_pen)
 position(-180, -300)
 turtle.seth(90)
 turtle.forward(8)
@@ -117,15 +113,11 @@ turtle.pendown()
 turtle.forward(135)
 
 
-for x, y in [ (-180, -120), (-180, 60)]:
-    position(x, y)
-    turtle.seth(90)
-    rectangle(8, 360)
+for x, y in [(-180, -120), (-180, 60)]:
+    rectangle(x, y, 8, 360, thick_pen, 90)
 
 for x, y in [(-174, -292), (-174, - 112), (174, -292), (174, -112)]:
-    position(x, y)
-    turtle.seth(90)
-    turtle.forward(172)
+    line(x, y, 172, thick_pen, 90)
 
 window(-146, -80)
 window(-37, -80)
@@ -134,10 +126,10 @@ window(-146, -240)
 window(72, -240)
 door(-29, -286)
 roof(-174, 68)
-flowers(-166,-292)
+flowers(-166, -292)
 flowers(52, -292)
 stairs(-34, -293)
-
+position(1000,1000)
 
 
 turtle.done()
