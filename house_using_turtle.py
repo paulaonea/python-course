@@ -56,6 +56,25 @@ def door(x, y):
     turtle.seth(45)
     turtle.forward(28)
 
+def roof(x, y):
+    position(x, y)
+    turtle.seth(80)
+    turtle.forward(85)
+    turtle.right(80)
+    turtle.forward(317)
+    turtle.right(80)
+    turtle.forward(85)
+    position(x + 6, y + 32)
+    for i in range(4):
+        turtle.circle(21,152)
+        turtle.seth(284)
+        turtle.circle(22, 152)
+        turtle.seth(284)
+    position(x + 12, y + 64)
+    for i in range(8):
+        turtle.circle(21,152)
+        turtle.seth(284)
+
 
 turtle.speed("fastest")
 
@@ -65,9 +84,7 @@ for x, y in [(-180, -300), (-180, -120), (-180, 60)]:
     rectangle(8, 360)
 
 for x, y in [(-174, -292), (-174, - 112), (174, -292), (174, -112)]:
-    turtle.penup()
-    turtle.setposition(x, y)
-    turtle.pendown()
+    position(x, y)
     turtle.seth(90)
     turtle.forward(172)
 
@@ -77,5 +94,8 @@ window(72, -80)
 window(-146, -240)
 window(72, -240)
 door(-37, -288)
+roof(-174, 68)
+
+
 
 turtle.done()
