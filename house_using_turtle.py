@@ -3,7 +3,7 @@
 import turtle
 
 
-def position(x, y):
+def position(x, y):  #move turtle to the given (x, y) position
     turtle.penup()
     turtle.setposition(x, y)
     turtle.pendown()
@@ -119,11 +119,9 @@ for x, y in [(-180, -120), (-180, 60)]:
 for x, y in [(-174, -292), (-174, - 112), (174, -292), (174, -112)]:
     line(x, y, 172, thick_pen, 90)
 
-window(-146, -80)
-window(-37, -80)
-window(72, -80)
-window(-146, -240)
-window(72, -240)
+for x, y in [(-146, -80), (-37, -80), (72, -80), (-146, -240), (72, -240)]:
+    window(x, y)
+
 door(-29, -286)
 roof(-174, 68)
 flowers(-166, -292)
