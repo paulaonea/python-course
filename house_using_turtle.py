@@ -75,6 +75,18 @@ def roof(x, y):
         turtle.circle(21,152)
         turtle.seth(284)
 
+def flowers(x, y):
+    position(x,y)
+    turtle.seth(90)
+    rectangle(12, 115)
+    position(x+109, y+12)
+    turtle.seth(90)
+    for i in range(6):
+        turtle.forward(5)
+        turtle.circle(8.5, 180)
+        turtle.forward(5)
+        turtle.seth(90)
+
 
 turtle.speed("fastest")
 
@@ -93,8 +105,10 @@ window(-37, -80)
 window(72, -80)
 window(-146, -240)
 window(72, -240)
-door(-37, -288)
+door(-29, -286)
 roof(-174, 68)
+flowers(-166,-292)
+flowers(52, -292)
 
 
 
