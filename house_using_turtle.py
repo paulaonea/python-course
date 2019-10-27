@@ -3,7 +3,7 @@
 import turtle
 
 
-def position(x, y):  #move turtle to the given (x, y) position
+def position(x, y):  # move turtle to the given (x, y) position
     turtle.penup()
     turtle.setposition(x, y)
     turtle.pendown()
@@ -112,7 +112,6 @@ turtle.setx(-44)
 turtle.pendown()
 turtle.forward(135)
 
-
 for x, y in [(-180, -120), (-180, 60)]:
     rectangle(x, y, 8, 360, thick_pen, 90)
 
@@ -128,6 +127,5 @@ flowers(-166, -292)
 flowers(52, -292)
 stairs(-34, -293)
 position(1000,1000)
-
 
 turtle.done()
