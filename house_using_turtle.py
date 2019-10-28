@@ -49,7 +49,8 @@ def window(x, y):
 def door(x, y):
     rectangle(x, y, 120, 60, thick_pen, 90)
     rectangle(x + 6, y + 5, 52, 48, thick_pen, 90)
-    rectangle(x + 6, y + 62, 52, 48, thick_pen, 90)
+    rectangle(x + 6, y + 62, 52, 22, thick_pen, 90)
+    rectangle(x + 32, y + 62, 52, 22, thick_pen, 90)
     circle(x + 60, y + 120, 30, 180, thick_pen)
     line(x + 28, y + 120, 28, thin_pen, 135)
     line(x + 30, y + 120, 30, thin_pen, 90)
