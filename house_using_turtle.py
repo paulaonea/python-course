@@ -6,11 +6,14 @@ import turtle
 def position(x, y):  # move turtle to the given (x, y) position
     turtle.penup()
     turtle.setposition(x, y)
+    turtle.fill(False)
     turtle.pendown()
 
 
-def rectangle(x, y, length, width, size, direction):
+def rectangle(x, y, length, width, size, direction, pen_colour="black", fill_colour="white"):
     turtle.pensize(size)
+    turtle.color(pen_colour, fill_colour)
+    turtle.fill(True)
     turtle.seth(direction)
     position(x, y)
     for i in range(2):
@@ -20,15 +23,17 @@ def rectangle(x, y, length, width, size, direction):
         turtle.right(90)
 
 
-def line(x, y, length, size, direction):
+def line(x, y, length, size, direction, pen_colour="black"):
     turtle.pensize(size)
+    turtle.color(pen_colour)
     turtle.seth(direction)
     position(x, y)
     turtle.forward(length)
 
 
-def circle(x, y, radius, angle, size):
+def circle(x, y, radius, angle, size, pen_colour="black", fill_colour="white"):
     turtle.pensize(size)
+    turtle.color(pen_colour, fill_colour)
     position(x, y)
     turtle.circle(radius, angle)
 
