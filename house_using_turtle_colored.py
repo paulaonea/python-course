@@ -118,14 +118,14 @@ thin_pen = 2
 for x, y in [(-180, -300), (-180, -120)]:
     rectangle(x, y, 8, 360, thick_pen, 90, True, "#e2914d", "#e9ac79")
 
-for x, y in [(-174, -292), (-174, - 112)]:
-    rectangle(x, y, 172, 348, thick_pen, 90, True, "#e2914d", "#f4d5bb")
+rectangle(-174, -292, 172, 348, thick_pen, 90, True, "#e2914d", "#f4d5bb")
+rectangle(-174, -112, 152, 348, thick_pen, 90, True, "#e2914d", "#f4d5bb")
 
-for x, y in [(-180, 60)]:
+for x, y in [(-180, 40)]:
     rectangle(x, y, 8, 360, thick_pen, 90, True, "#3f0000", "#720000")
 
 # roof
-roof(-180, 70, True, "#3f0000", "#720000")
+roof(-180, 50, True, "#3f0000", "#720000")
 
 # stairs
 stairs(-34, -293, True, "#4e5a65", "#718191")

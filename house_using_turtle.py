@@ -101,14 +101,17 @@ thick_pen = 3
 thin_pen = 2
 
 # walls
-for x, y in [(-180, -300), (-180, -120), (-180, 60)]:
+for x, y in [(-180, -300), (-180, -120), (-180, 40)]:
     rectangle(x, y, 8, 360, thick_pen, 90, True)
 
-for x, y in [(-174, -292), (-174, - 112), (174, -292), (174, -112)]:
+for x, y in [(-174, -292), (174, -292)]:
     line(x, y, 172, thick_pen, 90)
 
+for x, y in [(-174, - 112), (174, -112)]:
+    line(x, y, 152, thick_pen, 90)
+
 # roof
-roof(-174, 68)
+roof(-174, 48)
 
 # stairs
 stairs(-34, -293)
