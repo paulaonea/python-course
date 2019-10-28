@@ -10,17 +10,18 @@ def position(x, y):  # move turtle to the given (x, y) position
     turtle.pendown()
 
 
-def rectangle(x, y, length, width, size, direction, pen_colour="black", fill_colour="white"):
+def rectangle(x, y, length, width, size, direction, fill="False", pen_colour="black", fill_colour="white"):
     turtle.pensize(size)
     turtle.color(pen_colour, fill_colour)
-    turtle.fill(True)
     turtle.seth(direction)
     position(x, y)
+    turtle.fill(fill)
     for i in range(2):
         turtle.forward(length)
         turtle.right(90)
         turtle.forward(width)
         turtle.right(90)
+    turtle.fill(False)
 
 
 def line(x, y, length, size, direction, pen_colour="black"):
@@ -90,7 +91,7 @@ def flowers(x, y):
 
 def stairs(x, y):
     for i in range(3):
-        rectangle(x - i * 5, y - i * 5, 5, 68 + 2 * i * 5, thin_pen, 90)
+        rectangle(x - i * 5, y - i * 5, 5, 68 + 2 * i * 5, thin_pen, 90, True)
 
 
 turtle.speed("fastest")
@@ -99,45 +100,26 @@ thick_pen = 3
 thin_pen = 2
 
 # walls
-turtle.pensize(thick_pen)
-position(-180, -300)
-turtle.seth(90)
-turtle.forward(8)
-turtle.right(90)
-turtle.forward(145)
-turtle.penup()
-turtle.setx(35)
-turtle.pendown()
-turtle.forward(144)
-turtle.right(90)
-turtle.forward(8)
-turtle.right(90)
-turtle.forward(135)
-turtle.penup()
-turtle.setx(-44)
-turtle.pendown()
-turtle.forward(135)
-
-for x, y in [(-180, -120), (-180, 60)]:
+for x, y in [(-180, -300), (-180, -120), (-180, 60)]:
     rectangle(x, y, 8, 360, thick_pen, 90)
 
 for x, y in [(-174, -292), (-174, - 112), (174, -292), (174, -112)]:
     line(x, y, 172, thick_pen, 90)
 
-#roof
+# roof
 roof(-174, 68)
 
-#stairs
+# stairs
 stairs(-34, -293)
 
-#door
+# door
 door(-30, -287)
 
-#windows
+# windows
 for x, y in [(-146, -80), (-37, -80), (72, -80), (-146, -240), (72, -240)]:
     window(x, y)
 
-#flowers
+# flowers
 flowers(-166, -292)
 flowers(52, -292)
 
