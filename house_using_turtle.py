@@ -57,7 +57,7 @@ def roof(x, y):
     turtle.seth(80)
     turtle.forward(85)
     turtle.right(80)
-    turtle.forward(317)
+    turtle.forward(318)
     turtle.right(80)
     turtle.forward(85)
     position(x + 6, y + 32)
@@ -66,7 +66,7 @@ def roof(x, y):
         turtle.seth(284)
         turtle.circle(22, 152)
         turtle.seth(284)
-    position(x + 12, y + 64)
+    position(x + 11, y + 64)
     for i in range(8):
         turtle.circle(21,152)
         turtle.seth(284)
@@ -93,6 +93,7 @@ turtle.speed("fastest")
 thick_pen = 3
 thin_pen = 2
 
+# walls
 turtle.pensize(thick_pen)
 position(-180, -300)
 turtle.seth(90)
@@ -118,14 +119,23 @@ for x, y in [(-180, -120), (-180, 60)]:
 for x, y in [(-174, -292), (-174, - 112), (174, -292), (174, -112)]:
     line(x, y, 172, thick_pen, 90)
 
+#roof
+roof(-174, 68)
+
+#stairs
+stairs(-34, -293)
+
+#door
+door(-30, -287)
+
+#windows
 for x, y in [(-146, -80), (-37, -80), (72, -80), (-146, -240), (72, -240)]:
     window(x, y)
 
-door(-29, -286)
-roof(-174, 68)
+#flowers
 flowers(-166, -292)
 flowers(52, -292)
-stairs(-34, -293)
+
 position(1000,1000)
 
 turtle.done()
