@@ -21,6 +21,7 @@ def rectangle(x, y, length, width, size, direction, fill=False, pen_colour="blac
         turtle.right(90)
         turtle.forward(width)
         turtle.right(90)
+    turtle.fill(False)
 
 
 def line(x, y, length, size, direction, pen_colour="black"):
@@ -101,7 +102,7 @@ thin_pen = 2
 
 # walls
 for x, y in [(-180, -300), (-180, -120), (-180, 60)]:
-    rectangle(x, y, 8, 360, thick_pen, 90)
+    rectangle(x, y, 8, 360, thick_pen, 90, True)
 
 for x, y in [(-174, -292), (-174, - 112), (174, -292), (174, -112)]:
     line(x, y, 172, thick_pen, 90)
