@@ -10,7 +10,7 @@ def position(x, y):  # move turtle to the given (x, y) position
     turtle.pendown()
 
 
-def rectangle(x, y, length, width, size, direction, fill="False", pen_colour="black", fill_colour="white"):
+def rectangle(x, y, length, width, size, direction, fill=False, pen_colour="black", fill_colour="white"):
     turtle.pensize(size)
     turtle.color(pen_colour, fill_colour)
     turtle.seth(direction)
@@ -21,7 +21,6 @@ def rectangle(x, y, length, width, size, direction, fill="False", pen_colour="bl
         turtle.right(90)
         turtle.forward(width)
         turtle.right(90)
-    turtle.fill(False)
 
 
 def line(x, y, length, size, direction, pen_colour="black"):
