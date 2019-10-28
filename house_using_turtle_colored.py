@@ -45,6 +45,10 @@ def window(x, y):
     line(x + 8, y + 36, 60, thin_pen, 0, "#720000")
     line(x + 38, y + 6, 60, thin_pen, 90, "#720000")
     circle(x + 68, y + 66, 30, 180, thick_pen, "#720000")
+    for a, b in [(x + 18, y + 16), (x + 18, y + 42), (x + 48, y + 16), (x + 48, y + 42)]:
+        line(a, b, 20, thin_pen, 45, "white")
+    for a, b in [(x + 18, y + 24), (x + 18, y + 50), (x + 48, y + 24), (x + 48, y + 50)]:
+        line(a, b, 10, thin_pen, 45, "white")
 
 
 def door(x, y):
@@ -56,6 +60,8 @@ def door(x, y):
     line(x + 28, y + 120, 28, thin_pen, 135, "#3f0000")
     line(x + 30, y + 120, 30, thin_pen, 90, "#3f0000")
     line(x + 32, y + 120, 28, thin_pen, 45, "#3f0000")
+    for a, b in [(x + 12, y + 78), (x + 12, y + 88), (x + 38, y + 78), (x + 38, y + 88)]:
+        line(a, b, 15, thin_pen, 45, "white")
 
 
 def roof(x, y, fill, pen_colour="black", fill_color="white"):
