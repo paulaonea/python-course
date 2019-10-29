@@ -1,4 +1,5 @@
-# Draw a house using turtle module
+# Draw a house using turtle module - coloured option.
+# code written for python 2.7
 
 import turtle
 
@@ -6,7 +7,6 @@ import turtle
 def position(x, y):  # move turtle to the given (x, y) position
     turtle.penup()
     turtle.setposition(x, y)
-    turtle.fill(False)
     turtle.pendown()
 
 
@@ -32,11 +32,13 @@ def line(x, y, length, size, direction, pen_colour="black"):
     turtle.forward(length)
 
 
-def circle(x, y, radius, angle, size, pen_colour="black", fill_colour="white"):
+def circle(x, y, radius, angle, size, fill=False, pen_colour="black", fill_colour="white"):
     turtle.pensize(size)
     turtle.color(pen_colour, fill_colour)
     position(x, y)
+    turtle.fill(fill)
     turtle.circle(radius, angle)
+    turtle.fill(False)
 
 
 def window(x, y):
@@ -44,7 +46,7 @@ def window(x, y):
     rectangle(x, y, 6, 75, thick_pen, 90, True, "#3f0000", "#3f0000")
     line(x + 8, y + 36, 60, thin_pen, 0, "#720000")
     line(x + 38, y + 6, 60, thin_pen, 90, "#720000")
-    circle(x + 68, y + 66, 30, 180, thick_pen, "#720000")
+    circle(x + 68, y + 66, 30, 180, thick_pen, False, "#720000")
     for a, b in [(x + 18, y + 16), (x + 18, y + 42), (x + 48, y + 16), (x + 48, y + 42)]:
         line(a, b, 20, thin_pen, 45, "white")
     for a, b in [(x + 18, y + 24), (x + 18, y + 50), (x + 48, y + 24), (x + 48, y + 50)]:
@@ -56,7 +58,7 @@ def door(x, y):
     rectangle(x + 6, y + 5, 52, 48, thick_pen, 90, True, "#3f0000", "#660000")
     rectangle(x + 6, y + 62, 52, 22, thick_pen, 90, True, "#3f0000", "#c8f0ff")
     rectangle(x + 32, y + 62, 52, 22, thick_pen, 90, True, "#3f0000", "#c8f0ff")
-    circle(x + 60, y + 120, 30, 180, thick_pen, "#3f0000")
+    circle(x + 60, y + 120, 30, 180, thick_pen, False, "#3f0000")
     line(x + 28, y + 120, 28, thin_pen, 135, "#3f0000")
     line(x + 30, y + 120, 30, thin_pen, 90, "#3f0000")
     line(x + 32, y + 120, 28, thin_pen, 45, "#3f0000")
@@ -78,6 +80,7 @@ def roof(x, y, fill, pen_colour="black", fill_color="white"):
     turtle.right(100)
     turtle.forward(360)
     turtle.right(260)
+    turtle.fill(False)
     position(x + 6, y + 32)
     for i in range(4):
         turtle.circle(23,152)
@@ -105,8 +108,6 @@ def flowers(x, y):
     turtle.forward(100)
     turtle.fill(False)
     rectangle(x, y, 12, 115, thin_pen, 90, True, "#003d00", "#006500")
-    turtle.fill(False)
-
 
 
 def stairs(x, y, fill, pen_color, fill_color):
