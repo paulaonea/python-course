@@ -1,4 +1,5 @@
-# Draw a house using turtle module
+# Draw a house using turtle module in black and white
+# The written for python 2.7
 
 import turtle
 
@@ -6,7 +7,6 @@ import turtle
 def position(x, y):  # move turtle to the given (x, y) position
     turtle.penup()
     turtle.setposition(x, y)
-    turtle.fill(False)
     turtle.pendown()
 
 
