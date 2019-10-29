@@ -1,4 +1,5 @@
 # Draw a house using turtle module
+# Should work in python 2.7 and all 3.x versions.
 
 import turtle
 
