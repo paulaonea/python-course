@@ -56,17 +56,11 @@ house = roulette()
 
 if your_number == house[0]:
     if your_color == house[1]:
-        win = 100 * your_bet
+        print(f'{name}, this is AWESOME! You have won {100 * your_bet}')
     else:
-        win = 2 * your_bet
+        print(f'{name}, this is your lucky day. You have won {2 * your_bet}')
 elif your_color == house[1]:
-    win = your_bet
+    print(f'{name}, you have colour matching. You can keep your bet')
 else:
-    win = 0
-
-if win == 0:
     print(f'{name}, unfortunately you lost :(.  The house bet was {house[0]} {house[1]}.')
-else:
-    print(f'Congratulations {name}, this is your lucky day. You have just won {win}. ')
-
 
