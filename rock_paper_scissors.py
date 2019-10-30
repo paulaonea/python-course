@@ -6,14 +6,14 @@ import random
 
 
 def choice(name):
-    text = input(f'{name}, please choose rock, scissors or paper: ')
+    text = input(f'{name}, please choose rock, paper or scissors: ')
     while text not in ['rock', 'paper', 'scissors']:
-        text = input(f'{name}, your choice is not valid, please choose again (rock, paper, scissors: ')
+        text = input(f'{name}, your choice is not valid, please choose again (rock, paper, scissors): ')
     return text
 
 
 def result(choice1, choice2):
-    winning_combinations = [('rock', 'scissors'), ('paper', 'rock'), ('scissors', 'paper')]
+    winning_combinations = [('rock', 'scissors'), ('paper', 'rock'), ('scissors', 'paper')] # first object in the tuple is the winner
     if choice1 == choice2:
         return 'draw'
     elif (choice1, choice2) in winning_combinations:
