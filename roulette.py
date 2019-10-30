@@ -35,7 +35,7 @@ def color_choice(message):
 def number_choice(message):
     choice = integer(message)
     while choice not in range(1, 101, 1):
-        print(f'Not a valid choice. Try again. ')
+        print('Not a valid choice. Try again. ')
         choice = integer(message)
     return choice
 
@@ -46,7 +46,7 @@ def roulette():
     return number, colour
 
 
-name = input('What is your name?: ')
+name = input('What is your name?: ').capitalize()
 print(f'Hello {name}. This is a "roulette" type game, please make your choices.')
 your_bet = integer(f'{name}, what amount do you want to bet? (integer number): ')
 your_color = color_choice('Choose a colour (black or red): ')
@@ -58,7 +58,7 @@ if your_number == house[0]:
     if your_color == house[1]:
         win = 100 * your_bet
     else:
-        win = 2* your_bet
+        win = 2 * your_bet
 elif your_color == house[1]:
     win = your_bet
 else:
