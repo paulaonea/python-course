@@ -5,22 +5,11 @@
 import random
 
 
-def random_choice():
-    return choices[random.randint(0, 2)]
-
-
-def validation(choice):
-    if choice in choices:
-        return choice
-    else:
-        return 'error'
-
-
 def choice(name):
-    choice = input(f'{name}, please choose rock, scissors or paper: ')
-    while validation(choice) == 'error':
-        choice = input(f'{name}, your choice is not valid, please choose again (rock, paper, scissors: ')
-    return choice
+    text = input(f'{name}, please choose rock, scissors or paper: ')
+    while text not in ['rock', 'paper', 'scissors']:
+        text = input(f'{name}, your choice is not valid, please choose again (rock, paper, scissors: ')
+    return text
 
 
 def result(choice1, choice2):
@@ -39,14 +28,12 @@ opponent = input(f'Do you want to play against the computer? (y/n) ')
 if opponent == 'n':
     friend_name = input(f'{your_name}, you chose to play against a friend. What is your friend\'s name?: ')
 
-choices = ['rock', 'paper', 'scissors']
-
 your_choice = choice(your_name)
 
 if opponent == 'n':
     opponent_choice = choice(friend_name)
 else:
-    opponent_choice = random_choice()
+    opponent_choice = random.choice(['rock', 'paper', 'scissors'])
     print(f'Your opponent chose {opponent_choice}.')
 
 game_result = result(your_choice, opponent_choice)
