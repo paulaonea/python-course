@@ -21,3 +21,7 @@ class Test(TestCase):
     def test_6(self):
         self.assertEqual(result('paper', 'scissors'), "lost")
 
+    def test_7(self):
+        draw_options = [('rock', 'rock'), ('paper', 'paper'), ('scissors', 'scissors')]
+        for i, j in draw_options:
+            self.assertEqual(result(i, j), 'draw')
