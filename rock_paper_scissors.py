@@ -16,10 +16,13 @@ def result(choice1, choice2):
     winning_combinations = [('rock', 'scissors'), ('paper', 'rock'),
                             ('scissors', 'paper')]  # first object in the tuple is the winner
     if choice1 == choice2:
+        print(f'The game resulted in DRAW.')
         return 'draw'
     elif (choice1, choice2) in winning_combinations:
+        print('You won!')
         return 'won'
     else:
+        print('You lost!')
         return 'lost'
 
 
@@ -39,8 +42,5 @@ if __name__ == '__main__':
         opponent_choice = random.choice(['rock', 'paper', 'scissors'])
         print(f'Your opponent chose {opponent_choice}.')
 
-    game_result = result(your_choice, opponent_choice)
-    if game_result == 'draw':
-        print(f'The game resulted in DRAW.')
-    else:
-        print(f'{your_name}, you {game_result}!')
+    result(your_choice, opponent_choice)
+
