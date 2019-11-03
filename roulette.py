@@ -49,11 +49,10 @@ your_number = number_choice('Choose a number between 1 and 100: ')
 
 house = roulette()
 
-if your_number == house[0]:
-    if your_color == house[1]:
+if your_number == house[0] and your_color == house[1]:
         print(f'{name}, this is AWESOME! You have won {100 * your_bet}')
-    else:
-        print(f'{name}, this is your lucky day. You have won {2 * your_bet}')
+elif your_number == house[0]:
+    print(f'{name}, this is your lucky day. You have won {2 * your_bet}')
 elif your_color == house[1]:
     print(f'{name}, you have colour matching. You can keep your bet')
 else:
