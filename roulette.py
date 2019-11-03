@@ -14,15 +14,10 @@ import random
 
 
 def integer(message):
-    while True:
-        try:
-            choice = int(input(message))
-        except ValueError:
-            print('Not a valid choice. Try again.')
-            continue
-        else:
-            return choice
-            break
+    choice = (input(message))
+    while choice.isdigit() == False:
+        choice = input(F'Not a valid choice. Try again. {message}')
+    return choice
 
 
 def color_choice(message):
